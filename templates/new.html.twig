@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="col-sm-6 offset-sm-3">
+    <div class="form-group row">
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+    </div>
+    </div>
+{% endblock %}

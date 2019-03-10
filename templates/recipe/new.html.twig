@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+        <div class="col-sm-6 offset-sm-3">
+            <div class="form-group row">
+                <div class="col-2 col-form-label">{{ form_label(form.name) }}</div>
+                <div class="col-10">{{ form_widget(form.name) }}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col col-form-label">{{ form_label(form.estimated_time_to_make) }}</div>
+                <div class="col">{{ form_widget(form.estimated_time_to_make, { 'attr': {'style': 'flex-flow: nowrap !important'}}) }}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col col-form-label">{{ form_label(form.estimated_difficulty) }}</div>
+                <div class="col col-form-label"><p id="textInput">3</p></div>
+                <div class="col">{{ form_widget(form.estimated_difficulty) }}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col col-form-label">{{ form_label(form.ingredients) }}</div>
+                <div class="col">{{ form_widget(form.ingredients) }}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col col-form-label">{{ form_label(form.steps_to_make) }}</div>
+                <div class="col">{{ form_widget(form.steps_to_make) }}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col col-form-label"></div>
+                <div class="col"></div>
+            </div>
+            <div class="form-group row">
+                {{ form_row(form.submit) }}
+            </div>
+        </div>
+    {{ form_end(form) }}
+    <script>
+        document.getElementById('recipe_estimated_difficulty').oninput = function () {
+            document.getElementById('textInput').innerHTML = this.value;
+        }
+    </script>
+{% endblock %}
